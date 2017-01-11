@@ -1,0 +1,258 @@
+----------------------------------------------------------------------------------------     
+taille :
+    xs < 768px      téléphone           all
+    sm >= 768px     tablette            720 + 15 + 15 soit 750px
+    md >= 992px     bureau petit        940 + 15 + 15 soit 970px
+    lg >= 1200px    bureau grand        1140 + 15 + 15 soit 1170px
+    --------------------------------------------------------------- 
+    le + 15 correspond padding situé à gauche et à droite de la div   
+---------------------------------------------------------------------------------------- 
+
+form-inline :
+    pour aligner tous les éléments quand il n'y en a pas besoucoup sur une même ligne.
+    
+    form-group pour grouper des élément label et son champ ensemble et sur le champ on ajoute un form-control
+    
+    
+    img-responsive
+    img-thumbnail
+    img-circle
+    img-rounded
+    
+    
+    
+    
+    <div class="dropdown"> --> menu vers le bas 
+    <div class="dropup"> --> menu vers le haut
+
+        <div class="input-group-btn"> 
+        
+            <button type="button" class="btn btn-primary btn-lg dropdown-toggle" data-toggle="dropdown">Fruits</button> ------ class dropdown-toggle et data-toggle
+
+            <button type="button" class="btn btn-secondary btn-lg dropdown-toggle" data-toggle="dropdown">
+                <span class="caret"></span> ------------------------------------------- Icon flèche
+            </button>    
+
+            <ul class="dropdown-menu"> -------------------------------------------- class a utiliser
+                <li class="disabled"><a href="#">Banane</a></li>
+                <li><a href="#">Pomme</a></li>
+                <li class="divider"></li> ----------------------------------------- separation
+                <li><a href="#">Poire</a></li>                         
+                <li><a href="#">Orange</a></li>
+                <li><a href="#">Kiwi</a></li>
+                <li class="dropdown-header">Agrumes</li> -------------------------- titre
+                <li><a href="#">Pamplemous</a></li>
+            </ul>
+            
+        </div>
+
+    </div>
+    
+    
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    progressbar 
+        attribut :
+            class="progress-bar" ------------------- class de bootstrap
+            role="progreebar" --------------------- définit le rôle de la progressbar
+            style="50%" --------------------------- définit la taille d'avancement de la progressbar
+            aria-valuemin="0" --------------------- définit la valeur minimal pour les malvoyant 
+            aria-valuemax="100" ------------------- définit la valeur maximal pour les malvoyant 
+            aria-valuenow="50" -------------------- définit la valeur actuel pour les malvoyant 
+            
+            <span class="sr-only">50%</span> ------ non afficher à l'écran mais utile pour les malvoyant (screen reader)
+            
+            autre couleur : ----------------------- utiliser la class progress-bar-couleur (couleur à remplacer par success danger etc...)
+            hachuré la progress-bar --------------- utiliser la class progress-bar-striped
+                animation ------------------------- pour animer une barre hachuré, il faut ajouter la classe active
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    tooltip
+        propriétés :
+            data-toggle="tooltip" ----------------- obligatoire pour javascript (tooltip peut e^tre remplacer par autre chose mais a ne pas oublié de modifier le js.)
+            data-placement="direction" ------------ Permet de définir le sens d'apparition soit : top right bottom ou left
+        attributs :
+            title="votre message ici" ------------- Le message qui sera afficher dans la tooltip
+        javascript : ------------------------------ code javascript
+            $(document).ready(function(){
+                $('[data-toggle="tooltip"]').tooltip();
+            });
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    Modal (2 partie)
+        [P1] -------------------------------------- Conception du bouton
+            propriétés :
+                data-toggle="modal" ---------------
+                data-target="#identifiant" --------
+        [P2] -------------------------------------- Contenu de la modal (Plusieurs div avec des classes spécifique)
+            1er niveau : div A
+                class :
+                    modal -------------------------
+                    fade --------------------------
+                id :
+                    identifiant -------------------
+                propriété :
+                    tabindex="-1" -----------------
+            2ème niveau : div A-1
+                class="modal-dialog" --------------
+                class="modal-lg" ------------------ permet d'agrandir une modal
+            3ème niveau : div A-1-1
+                class="modal-content" -------------
+            4ème niveau : div A-1-1-1a (header) iv A-1-1-1b (body) iv A-1-1-1c (footer) 
+                class="modal-header" --------------
+                    class="modal-title" -----------
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                class="modal-body" ----------------
+                class="modal-footer" --------------
+                    <button type="button" data-dismiss="modal" class="btn btn-default">Fermer</button>
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+    Snipet NAVBAR 
+    navabar ------------------------------------ DE BASE
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <a href="#" class="navbar-brand">Nom du site</a>
+                </div>
+                <div>
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">accueil</a></li>
+                        <li><a href="#">qui sommes nous</a></li>
+                        <li><a href="#">nos projets</a></li>
+                        <li><a href="#">contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    navabar ------------------------------------ noir
+        <nav class="navbar navbar-inverse">
+            <div class="container">
+                <div class="navbar-header">
+                    <a href="#" class="navbar-brand">Nom du site</a>
+                </div>
+                <div>
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">accueil</a></li>
+                        <li><a href="#">qui sommes nous</a></li>
+                        <li><a href="#">nos projets</a></li>
+                        <li><a href="#">contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    navabar ------------------------------------ fixé en haut
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a href="#" class="navbar-brand">Nom du site</a>
+                </div>
+                <div>
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">accueil</a></li>
+                        <li><a href="#">qui sommes nous</a></li>
+                        <li><a href="#">nos projets</a></li>
+                        <li><a href="#">contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    navabar ------------------------------------ fixé en bas avec un menu à droite
+        <nav class="navbar navbar-default navbar-fixed-bottom">
+            <div class="container">
+                <div class="navbar-header">
+                    <a href="#" class="navbar-brand">Nom du site</a>
+                </div>
+                <div>
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">accueil</a></li>
+                        <li><a href="#">qui sommes nous</a></li>
+                        <li><a href="#">nos projets</a></li>
+                        <li><a href="#">contact</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">accueil</a></li>
+                        <li><a href="#">qui sommes nous</a></li>
+                        <li><a href="#">nos projets</a></li>
+                        <li><a href="#">contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    navabar ------------------------------------ fixé en bas avec un menu à droite avec un container-fluid
+        <nav class="navbar navbar-default navbar-fixed-bottom">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a href="#" class="navbar-brand">Nom du site</a>
+                </div>
+                <div>
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">accueil</a></li>
+                        <li><a href="#">qui sommes nous</a></li>
+                        <li><a href="#">nos projets</a></li>
+                        <li><a href="#">contact</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">accueil</a></li>
+                        <li><a href="#">qui sommes nous</a></li>
+                        <li><a href="#">nos projets</a></li>
+                        <li><a href="#">contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    navabar ------------------------------------ mettre en place la petit bouton pour les téléphones
+        <nav class="navbar navbar-inverse navbar-fixed-bottom">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#monMenu">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="#" class="navbar-brand">Nom du site</a>
+                </div>
+                <div class="collapse navbar-collapse" id="monMenu">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">accueil</a></li>
+                        <li><a href="#">qui sommes nous</a></li>
+                        <li><a href="#">nos projets</a></li>
+                        <li><a href="#">contact</a></li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#"><span class="glyphicon glyphicon-log-in"> Login</span></a></li>
+                        <li><a href="#">S'enregistrer</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>      
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------       scroll-spy (sur le body)
+    scroll-spy :
+        propritétés :
+            data-spy="scroll" --------------------- Sur le body on ajoute cette propriétée qui nous permet de définir le scroll-spy sur notre body
+            data-target=".navbar" ----------------- On cherche à animer la class navbar
+            data-offset="50" ---------------------- Permet de changer d'élément à partir de 50px avant l'arrivé d'une position quelconque.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------       scroll-spy (sur le body)
+        
+        
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
